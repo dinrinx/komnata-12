@@ -85,3 +85,52 @@ body.y17 .screen{background:radial-gradient(ellipse at 75% -10%,rgba(0,210,255,.
 .fxslot .onoff.on{background:var(--ac);color:#000}
 .fxslot input[type=range]{width:100%}
 .fxslot .plabel{font-size:11px;color:var(--mu)}
+
+.lvrow{display:flex;align-items:center;gap:8px}
+.lvrow .bar.lv{flex:1}
+.lvnum{display:none;min-width:30px;text-align:right;font-size:13px;color:var(--tx);font-weight:600}
+
+/* ===== мобильная адаптация (ПК-версия выше не трогается) ===== */
+@media (max-width: 760px){
+  html{overflow-x:hidden}
+  body{min-width:0;width:100%;padding:10px;overflow-x:hidden}
+  .app{grid-template-columns:1fr;max-width:100%;width:100%;gap:8px}
+
+  .top{grid-column:1;flex-wrap:wrap;height:auto;gap:8px;width:100%}
+  .top>div{padding:8px 12px;height:48px;flex:1 1 auto;min-width:0;overflow:hidden}
+  .logo{flex:0 0 auto;font-size:18px!important;height:48px;padding:0 14px}
+  .btn{width:48px;height:48px;font-size:18px;flex:0 0 auto}
+  .grow{order:5;flex:1 1 100%;height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px;min-width:0}
+  .grow .m,.grow .big{white-space:normal;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+  .grow .big{font-size:16px}
+  #title{font-size:16px!important;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;display:inline-block}
+  .mode{min-width:0;flex:1 1 auto;height:48px;padding:6px 12px}
+  .mode b{font-size:13px}
+  .top .big{font-size:18px}
+  .top .m{white-space:normal}
+
+  .hero{grid-template-columns:1fr;grid-column:1;min-height:auto;width:100%}
+  .screen{border-right:none;border-bottom:1px solid var(--ln);padding:16px;min-width:0}
+  .year{font-size:84px!important;margin:10px 0 8px;letter-spacing:-.03em!important}
+  .line{height:48px;margin-top:12px}
+  .leap{padding:16px;min-width:0}
+  .yrs{min-width:0}
+  .yt{height:76px;padding:10px;min-width:0}
+  .yt b{font-size:28px}
+
+  .desk{grid-column:1;grid-row:auto;padding:16px;gap:16px;width:100%}
+
+  .form{grid-template-columns:repeat(2,1fr);grid-column:1;gap:8px;width:100%}
+  .form div{height:auto;min-height:66px;padding:10px 12px;min-width:0}
+
+  .voices{grid-column:1;grid-template-columns:1fr;gap:10px;width:100%}
+  .v{padding:16px;min-width:0}
+  .vh h3{font-size:34px!important;-webkit-text-stroke:3px color-mix(in srgb,currentColor 45%,#fff)}
+  .pat div{height:48px;padding:7px}
+  .chain{font-size:10px}
+  .lvnum{display:block}
+  .ghost:after{right:auto;left:16px}
+
+  .fxrack-toggle{padding:4px 0}
+  .fxslot select,.fxslot input[type=range]{min-height:28px}
+}

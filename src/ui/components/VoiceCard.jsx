@@ -40,10 +40,13 @@ export default function VoiceCard({ i, state }) {
         ))}
       </div>
       <div className="st">{v.s(R)}</div>
-      <Fader className="bar lv" value={R.lvl[i]} color={`var(${v.c})`} onSet={(x) => setLevel(i, x)} renderFill={false}>
-        <i style={{ width: `${Math.min(100, level * 100)}%`, background: `var(${v.c})` }} />
-        <b style={{ left: `${R.lvl[i] * 100}%` }} />
-      </Fader>
+      <div className="lvrow">
+        <Fader className="bar lv" value={R.lvl[i]} color={`var(${v.c})`} onSet={(x) => setLevel(i, x)} renderFill={false}>
+          <i style={{ width: `${Math.min(100, level * 100)}%`, background: `var(${v.c})` }} />
+          <b style={{ left: `${R.lvl[i] * 100}%` }} />
+        </Fader>
+        <b className="lvnum">{Math.round(R.lvl[i] * 100)}</b>
+      </div>
       <div className="row">
         <span className="m">панорама</span>
         <input type="range" min={-1} max={1} step={0.05} value={R.pan[i]} onChange={(e) => setPan(i, Number(e.target.value))} />
